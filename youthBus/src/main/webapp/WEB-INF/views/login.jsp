@@ -14,12 +14,26 @@
 <!-- script Tag -->
 <script src="./resources/js/jquery-2.1.3.min.js"></script>
 <script src="./resources/js/jquery.backstretch.min.js"></script>
+<script src="./resources/js/facebook_login.js"></script>
 <!-- css 초기화 -->
 
 <title>청춘버스</title>
-
+<!--background 슬라이드-->
+<script>
+	$(function() {
+		$.backstretch([ "./resources/img/bg1.jpg", "./resources/img/bg2.jpg",
+				"./resources/img/bg3.jpg" ], {
+			duration : 4000,
+			fade : 750
+		});
+	});
+	
+</script>
 </head>
 <body>
-	index.jsp
+	<div id = "outside">
+		<div id="fb" onclick="checkLoginState();" style="cursor: pointer;">페이스북으로 로그인</div>
+		<div id="naver_id_login"></div>
+	</div>
 </body>
 </html>
