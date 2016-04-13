@@ -6,8 +6,7 @@ public class memberDTO {
 	private String nickname;
 	private String gender;
 	
-	public memberDTO(int index, String userid, String nickname, String gender){
-		this.index = index;
+	public memberDTO(String userid, String nickname, String gender){
 		this.userid = userid;
 		this.nickname = nickname;
 		this.gender = gender;

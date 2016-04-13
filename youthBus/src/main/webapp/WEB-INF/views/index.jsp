@@ -17,7 +17,6 @@
 <!-- css 초기화 -->
 
 <title>청춘버스</title>
-
 </head>
 <body>
 	index.jsp

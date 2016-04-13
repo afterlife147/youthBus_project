@@ -1,5 +1,4 @@
 //SDK 초기화
-
 $(document).ready(function() {
   $.ajaxSetup({ cache: true });
   $.getScript('//connect.facebook.net/ko_KR/sdk.js', function(){
@@ -11,27 +10,6 @@ $(document).ready(function() {
     });
   });
 });
-
-/*window.fbAsyncInit = function() {
-	FB.init({
-		appId : '856055527837167',
-		xfbml : true,
-		version : 'v2.5'
-	});
-};
-
-(function(d, s, id) {
-	var js;
-	var fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) {
-		return;
-	}
-	js = d.createElement(s);
-	js.id = id;
-	js.src = "//connect.facebook.net/ko_KR/all.js";
-	fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));*/
-
 
 function statusChangeCallback(response) {
 	console.log('statusChangeCallback');
@@ -64,13 +42,16 @@ function facebooklogin() {
 			fields : 'id, name, gender'
 		}, function(user) {
 			console.log(user.id, user.name, user.gender);
-			$.post("/index", {"id": user.id, "name": user.name, "gender": user.gender});
-			/*
-			 * // $.post("./fbloginprocess.jsp", { "userid": user.id,
-			 * "username": user.name, "fbaccesstoken":accessToken} function
-			 * (responsephp) { //댓글을 처리한 다음 해당 웹페이지를 갱신 시키기 위해 호출.
-			 * location.replace('./main.jsp'); } );
-			 */
+			var param = {"id" : user.id, "name" : user.name, "gender" : user.gender};
+			$.ajax({
+				url : "http://mongsil311.cafe24.com/memberAjax",
+				type : 'POST',
+				data : param,
+				success : function(){
+					$(location).attr('href', "/index");
+				}
+			});
+
 		});
 	}, { scope : 'public_profile'} );
 }
