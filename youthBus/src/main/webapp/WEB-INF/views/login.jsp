@@ -15,6 +15,7 @@
 <script src="./resources/js/jquery-2.1.3.min.js"></script>
 <script src="./resources/js/jquery.backstretch.min.js"></script>
 <script src="./resources/js/facebook_login.js"></script>
+<script src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.1.js"></script>
 <!-- css 초기화 -->
 
 <title>청춘버스</title>
@@ -27,13 +28,19 @@
 			fade : 750
 		});
 	});
-	
 </script>
+
 </head>
 <body>
 	<div id = "outside">
-		<div id="fb" onclick="checkLoginState();" style="cursor: pointer;">페이스북으로 로그인</div>
-		<div id="naver_id_login"></div>
+		<div id="fb" onclick="checkLoginState();" style="cursor:pointer">페이스북으로 로그인</div>
+		<div id="naver_id_login" onclick="naver_login();"style="cursor:pointer"></div>
 	</div>
+<script type="text/javascript">
+	var naver_id_login = new naver_id_login("HuF4g6zbRdU8Ap3FKbw2", "http://mongsil311.cafe24.com/index");
+	naver_id_login.setButton("green", 2,40);
+	naver_id_login.setPopup();
+	naver_id_login.init_naver_id_login();
+</script>
 </body>
 </html>

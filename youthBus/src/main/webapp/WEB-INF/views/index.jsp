@@ -13,7 +13,6 @@
 
 <!-- script Tag -->
 <script src="./resources/js/jquery-2.1.3.min.js"></script>
-<script src="./resources/js/jquery.backstretch.min.js"></script>
 <!-- css 초기화 -->
 
 <title>청춘버스</title>

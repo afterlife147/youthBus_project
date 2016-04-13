@@ -18,7 +18,6 @@ function statusChangeCallback(response) {
 	if (response.status === 'connected') {
 		// 페이스북 로그인 ok , 앱 로그인 ok
 		facebooklogin();
-		//$(location).attr('href' , '/index');
 	} else if (response.status === 'not_authorized') {
 		// 페이스북 로그인 ok , 앱 로그인 no
 		facebooklogin();
