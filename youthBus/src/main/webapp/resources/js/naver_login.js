@@ -6,6 +6,12 @@ function naver_login(){
 	naver_id_login.setState("abcdefghijkmnopqrst");
 	naver_id_login.setPopup();
 	naver_id_login.init_naver_id_login();	
+	
+	naver_id_login.get_naver_userprofile(); 
+    id = naver_id_login.getProfileData('id');
+    name = naver_id_login.getProfileData('name');
+    gender = naver_id_login.getProfileData('gender');
+
 }
 
 
