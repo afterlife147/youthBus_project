@@ -12,7 +12,6 @@ public class ajaxController {
 	public void memberAjax(String id, String name, String gender){
 		memberCommand command = new memberCommand();
 		command.execute(id, name, gender);
-		
 		return;
 	}
 }
