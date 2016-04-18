@@ -13,11 +13,53 @@
 
 <!-- script Tag -->
 <script src="./resources/js/jquery-2.1.3.min.js"></script>
-<!-- css 초기화 -->
+<script src="./resources/js/index.js"></script>
+
+<!-- css 연결 -->
+<link href="./resources/css/index.css" type="text/css" rel="stylesheet">
 
 <title>청춘버스</title>
 </head>
 <body>
-	index.jsp
+	<iframe>
+		<!-- 헤더 -->
+		<header id="header">
+			<div id="logo"></div>
+			<ul id="menu_ul">
+				<div id="menu">
+					<li class="b"><a href="#" id="t0">청춘나눔</a></li>
+					<li class="b"><div class="bar">|</div></li>
+					<li class="b"><a href="#" id="t1">청춘버스</a></li>
+					<li class="b"><div class="bar">|</div></li>
+					<li class="b"><a href="#" id="t2">청춘이야기</a></li>
+					<li class="b"><div class="bar">|</div></li>
+					<li class="b"><a href="#" id="t3">청춘도우미</a></li>
+				</div>
+			</ul>
+		    <div id="outbtn"><a href="#">로그아웃</a></div>
+	    </header>
+	    
+	    <!-- 이미지 슬라이드 -->
+	    <div id="slide">
+	    	<div id="s_bg1"></div>    
+	    </div>
+	    
+		<!-- 박스 -->
+		<div id="box">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+			<img class="s_box" src="http://placehold.it/300x200" alt="">
+		</div>
+		
+		<!-- 푸터 -->
+		<div id="footer">
+			<div id="ft_content">Copyright © 2016 Mongsil All Rights Reserved.</div>
+		</div>
+	</iframe>
 </body>
 </html>
