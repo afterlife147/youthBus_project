@@ -1,4 +1,4 @@
-package com.mongsil.youthbus.dao;
+package com.mongsil.ondream.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,10 +8,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import com.mongsil.youthbus.dto.memberDTO;
-
 public class memberDAO {
-
+	
 	private static memberDAO inst = null;
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
@@ -38,11 +36,10 @@ public class memberDAO {
 
 		return conn;
 	}
-
-	public memberDTO memberInsert(String id, String name, String gender) {
-		memberDTO dto = null;
-		String selectQuery = "select userid from member where userid = ?";
-		String insertQuery = "insert into member(userid, nickname, gender) values (?, ?, ?)";
+	
+	public int memberInsert(String id, String pwd, String age, String gender) {
+		String selectQuery = "select userid from on_member where userid = ?";
+		String insertQuery = "insert into on_member(userid, userpwd, age, gender) values (?, ?, ?, ?)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(selectQuery);
@@ -50,14 +47,14 @@ public class memberDAO {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				return new memberDTO(id, name, gender);
+				return 1;
 			} else {
 				pstmt = conn.prepareStatement(insertQuery);
 				pstmt.setString(1, id);
-				pstmt.setString(2, name);
-				pstmt.setString(3, gender);
+				pstmt.setString(2, pwd);
+				pstmt.setInt(3, Integer.parseInt(age));
+				pstmt.setString(4, gender);
 				pstmt.executeUpdate();
-				dto = new memberDTO(id, name, gender);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -73,6 +70,46 @@ public class memberDAO {
 				e.printStackTrace();
 			}
 		}
-		return dto;
+		return 0;
+	}	
+	
+	public int memberselect(String id , String pwd){
+		int result = 0;
+		String selectQuery = "select userid, userpwd from on_member where userid = ?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(selectQuery);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				if(rs.getString(1).equals(id)){
+					if(rs.getString(2).equals(pwd)){
+						result = 1;
+						return result;
+					}else{
+						result = 2;
+						return result;
+					}
+				}
+			}else{
+				result = 0;
+				return result;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 }

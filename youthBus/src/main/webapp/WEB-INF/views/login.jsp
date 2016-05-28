@@ -16,31 +16,29 @@
 <script src="./resources/js/jquery.backstretch.min.js"></script>
 <script src="./resources/js/facebook_login.js"></script>
 <script src="./resources/js/naverLogin_implicit-1.0.1.js"></script>
-<!-- css 초기화 -->
+<script src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.1.js"></script>
+<script src="./resources/js/login.js"></script>
+
+<!-- css 연결 -->
+<link href="./resources/css/login.css" type="text/css" rel="stylesheet">
 
 <title>청춘버스</title>
-<!--background 슬라이드-->
-<script>
-	$(function() {
-		$.backstretch([ "./resources/img/bg1.jpg", "./resources/img/bg2.jpg",
-				"./resources/img/bg3.jpg" ], {
-			duration : 4000,
-			fade : 750
-		});
-	});
-</script>
 
 </head>
 <body>
+	<header id="header">
+		<div id="l_logo"></div>
+	</header>
 	<div id = "outside">
-		<div id="fb" onclick="checkLoginState();" style="cursor:pointer">페이스북으로 로그인</div>
+		<div id="fb" onclick="checkLoginState();" style="cursor:pointer"></div>
 		<div id="naver_id_login" style="cursor:pointer"></div>
 	</div>
 <script>
 	naver = new naver_id_login("HuF4g6zbRdU8Ap3FKbw2", "http://mongsil311.cafe24.com/naver_login");
-	naver.setButton('green', 3, 40);
+	naver.setButton('green', 4, 50);
 	naver.setPopup('true');
 	naver.init_naver_id_login();
 </script>
+
 </body>
 </html>

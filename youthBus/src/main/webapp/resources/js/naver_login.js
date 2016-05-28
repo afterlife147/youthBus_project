@@ -25,5 +25,3 @@ var naver = null;
 			}
 		});
   }
-
-

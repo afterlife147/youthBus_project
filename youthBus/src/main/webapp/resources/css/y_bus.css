@@ -1,0 +1,17 @@
+@import url("share.css");
+
+	
+#insertBox{ width:100%; text-align:center; margin-top:3%; margin-bottom:3%; }
+#bucket { width:60%; height:30px; font-size:15px; display:inline-block; outline:0; margin-bottom:2%; }
+#nextBtn { width:7%; height:30px;; background:#04adc0; color:white; border:0; 
+			display:inline-block; margin-left:20px; cursor:pointer; }
+#insertBtn { width:7%; height:25px; margin:0 auto; margin-top:1%; }
+#bucketBox {margin: 20px auto;}
+#layerPop {width:900px; height:400px; position:absolute; padding:10px; border:4px solid #fff; border-radius:4px; background:#fff; display:none; z-index:100;}
+#closeBtn {background-image:url('/resources/img/closeBtn.png'); background-size:100% 100%; width:30px; height:30px; position:absolute; right:5px; top:5px; z-index:9999;}
+.inner_bucket {width:400px; height:400px; position:absolute; left:0; padding:5px;}
+.inner_reply {width:500px; height:400px; position:absolute; right:0;}
+
+#foot{width:100%; bottom:0px; float:block; overflow:hidden;}
+body{background-image: url('../img/test6.png'); background-size:cover;}
+

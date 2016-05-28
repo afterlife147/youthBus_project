@@ -1,0 +1,68 @@
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+	/*css �ʱ�ȭ*/
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+		font-family: '�������', 'Nanum Gothic', sans-serif;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+
+#slide { width:100%; height:250px; position:relative; }
+#s_bg1 { width:100%; height:250px; background-image: url('../img/index_bg.jpg'); 
+		 background-size:100% 100%; position:absolute; }
+#box { width:100%; margin:0 auto; text-align:center; }
+.s_box { margin:20px 10px ; }
+#bucketBox {margin: 20px auto;}
+#layerPop {width:1000px; height:600px; position:absolute; padding:10px; border:4px solid #fff; border-radius:4px; background:#fff; display:none; z-index:100;}
+#deemed {width:100%; height:100%; position:absolute; top:0; left:0; filter:Alpha(opacity=50);opacity:0.5; background:#000; z-index:1;}
+#closeBtn {background-image:url('/resources/img/closeBtn.png'); background-size:100% 100%; width:30px; height:30px; position:absolute; right:5px; top:5px; z-index:9999;}
+#layerPop {overflow:hidden; position:relative;}
+.inner_bucket {width:400px; height:600px; position:absolute; left:0; padding:5px;}
+.inner_reply {width:600px; height:600px; position:absolute; right:0; margin-top:30px;}
+#foot{width:100%; bottom:0px; float:block; overflow:hidden;}
+
+
+::-webkit-scrollbar {width: 15px; height: 8px; border: 3px solid #fff; }
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background: #efefef}
+::-webkit-scrollbar-track {background: #efefef; -webkit-border-radius: 10px; border-radius:10px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.3)}
+::-webkit-scrollbar-thumb {height: 200px; width: 50px; background: rgba(0,0,0,.25); -webkit-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1)}
